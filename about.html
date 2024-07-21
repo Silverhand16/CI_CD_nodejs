@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Simulate fetching visit count from a server or local storage
+            var visitCount = localStorage.getItem('visitCount') || 0;
+            visitCount++;
+            localStorage.setItem('visitCount', visitCount);
+            $('#visitCount').text(visitCount);
+
+            // Redirect to the GitHub page when the button is clicked
+            $('#loadMore').click(function () {
+                window.location.href = 'https://github.com/Silverhand16';
+            });
+        });
+    </script>
+</head>
+<body>
+    <div style="margin:6px;">
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <a class="navbar-brand" href="/">My first project</a>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="active">
+                        <a href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="jumbotron" style="padding:40px;">
+            <h1>about the project</h1>
+            <strong>
+                <p>Use NodeJs to make this api</p>
+            </strong>
+            <br>
+            <button id="loadMore" class="btn btn-info">Load More Content</button>
+            <div id="additionalContent" style="margin-top:20px;"></div>
+        </div>
+    </div>
+</body>
+</html>
